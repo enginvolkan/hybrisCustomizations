@@ -15,7 +15,32 @@
 
 <items 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
 			xsi:noNamespaceSchemaLocation="items.xsd">
-
+	<relations>
+		<relation localized="false" code="reviewLikes" generate="true"
+			autocreate="true">
+			<deployment table="reviewLikes" typecode="23544" />
+			<sourceElement type="CustomerReview"
+				qualifier="likedReviews" cardinality="many" collectiontype="set">
+			</sourceElement>
+			<targetElement type="Customer"
+				qualifier="customersLiked" cardinality="many"
+				collectiontype="set">
+			</targetElement>
+			
+		</relation>
+		<relation localized="false" code="reviewDislikes" generate="true"
+			autocreate="true">
+			<deployment table="reviewDislikes" typecode="23545" />
+			<sourceElement type="CustomerReview"
+				qualifier="dislikedReviews" cardinality="many" collectiontype="set">
+			</sourceElement>
+			<targetElement type="Customer"
+				qualifier="customersDisliked" cardinality="many"
+				collectiontype="set">
+			</targetElement>
+			
+		</relation>
+	</relations>
 	<itemtypes>
 <!--
 		<itemtype generate="true"
