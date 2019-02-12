@@ -22,7 +22,7 @@
 			<sourceElement type="CustomerReview"
 				qualifier="likedReviews" cardinality="many" collectiontype="set">
 			</sourceElement>
-			<targetElement type="Customer"
+			<targetElement type="User"
 				qualifier="customersLiked" cardinality="many"
 				collectiontype="set">
 			</targetElement>
@@ -34,7 +34,7 @@
 			<sourceElement type="CustomerReview"
 				qualifier="dislikedReviews" cardinality="many" collectiontype="set">
 			</sourceElement>
-			<targetElement type="Customer"
+			<targetElement type="User"
 				qualifier="customersDisliked" cardinality="many"
 				collectiontype="set">
 			</targetElement>
