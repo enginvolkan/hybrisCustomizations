@@ -5,6 +5,7 @@
 
 The main purpuse of this extension is to add "Helpful" "Not Helpful" statistics for customer reviews in PDP.
 For sake of simplicity, both business logic and UI enhancements are kept in an addon. Service and Facade Layer customizations may be moved to another extension in a real implementation.
+Unit tests are also included for each class.
 
 ###**Requirements**
 -----------------------------
@@ -16,7 +17,7 @@ For sake of simplicity, both business logic and UI enhancements are kept in an a
 5. A customers can not mark his/her own comment.
 6. When clicked on the either button, the statistics will immediately be increased and the buttons will be deactivated.
 7. Once clicked, the customer will not be able to change his/her decision.
-8. Page will not be reloaded with a button click. The message will be sent in the background.
+8. PDP will not be reloaded with a button click. The message will be sent in the background.
 
 ###**Design**
 -----------------------
@@ -28,5 +29,11 @@ For sake of simplicity, both business logic and UI enhancements are kept in an a
 - Extend DefaultCustomerReviewService to setup the business logic for adding a like or a dislike
 
 **Facade Layer**
+- Extend ReviewData to include number of likes and dislikes for each review. 
+- Extend DefaultProductFacade to include like and dislike methods for the facade layer
+- Extend CustomerReviewPopulator"
 
 **Presentation Layer**
+- Controller
+- jsp
+- javascript

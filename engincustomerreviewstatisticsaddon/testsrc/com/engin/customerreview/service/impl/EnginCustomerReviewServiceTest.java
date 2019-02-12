@@ -59,7 +59,6 @@ public class EnginCustomerReviewServiceTest
 	@Test
 	public void testCustomerLikedReview()
 	{
-		customerReview.setUser(reviewUser);
 		assertTrue("Customer review cannot be marked as liked!",
 				enginCustomerReviewService.customerLikedReview(customerReview, sessionUser));
 		assertEquals("Number of customers liked is not correct!", 1, customerReview.getCustomersLiked().size());
@@ -76,7 +75,6 @@ public class EnginCustomerReviewServiceTest
 	@Test
 	public void testCustomerLikedReviewAgain()
 	{
-		customerReview.setUser(reviewUser);
 		enginCustomerReviewService.customerLikedReview(customerReview, sessionUser);
 		assertFalse("Customer liked the review again!",
 				enginCustomerReviewService.customerLikedReview(customerReview, sessionUser));
@@ -85,7 +83,6 @@ public class EnginCustomerReviewServiceTest
 	@Test
 	public void testCustomerLikedAfterDislike()
 	{
-		customerReview.setUser(reviewUser);
 		enginCustomerReviewService.customerDislikedReview(customerReview, sessionUser);
 		assertFalse("Customer liked the review after disliking!",
 				enginCustomerReviewService.customerLikedReview(customerReview, sessionUser));
@@ -98,7 +95,6 @@ public class EnginCustomerReviewServiceTest
 	@Test
 	public void testCustomerDislikedReview()
 	{
-		customerReview.setUser(reviewUser);
 		assertTrue("Customer review cannot be marked as disliked!",
 				enginCustomerReviewService.customerDislikedReview(customerReview, sessionUser));
 		assertEquals("Number of customers disliked is not correct!", 1, customerReview.getCustomersDisliked().size());
@@ -115,7 +111,6 @@ public class EnginCustomerReviewServiceTest
 	@Test
 	public void testCustomerDislikedReviewAgain()
 	{
-		customerReview.setUser(reviewUser);
 		enginCustomerReviewService.customerDislikedReview(customerReview, sessionUser);
 		assertFalse("Customer disliked the review again!",
 				enginCustomerReviewService.customerDislikedReview(customerReview, sessionUser));
@@ -124,7 +119,6 @@ public class EnginCustomerReviewServiceTest
 	@Test
 	public void testCustomerDislikedAfterLike()
 	{
-		customerReview.setUser(reviewUser);
 		enginCustomerReviewService.customerLikedReview(customerReview, sessionUser);
 		assertFalse("Customer disliked the review after liking!",
 				enginCustomerReviewService.customerDislikedReview(customerReview, sessionUser));

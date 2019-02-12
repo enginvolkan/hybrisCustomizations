@@ -50,5 +50,11 @@
 		class="com.engin.customerreview.service.impl.EnginCustomerReviewService"
 		parent="defaultCustomerReviewService">
 	</bean>
+	
+	<alias name="enginProductFacade" alias="productFacade"/>
+	<bean id="enginProductFacade" class="com.engin.customerreview.facades.impl.EnginProductFacade" parent="defaultProductFacade">
+			<property name="customerReviewService" ref="customerReviewService" />
+<!-- 			<property name="userService" ref="userService" />			 -->
+   </bean>
 
 </beans>
