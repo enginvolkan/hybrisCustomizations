@@ -31,7 +31,7 @@ Unit tests are also included for each class.
 **Facade Layer**
 - Extend ReviewData to include number of likes and dislikes for each review. 
 - Extend DefaultProductFacade to include like and dislike methods for the facade layer
-- Extend CustomerReviewPopulator"
+- Extend CustomerReviewPopulator to populate custom fields in ReviewData added in first item above.
 
 **Presentation Layer**
 - Controller

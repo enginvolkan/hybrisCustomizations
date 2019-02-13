@@ -56,5 +56,23 @@
 			<property name="customerReviewService" ref="customerReviewService" />
 <!-- 			<property name="userService" ref="userService" />			 -->
    </bean>
+   
+   	<alias name="defaultCustomerReviewConverter" alias="customerReviewConverter"/>
+	<bean id="defaultCustomerReviewConverter" parent="abstractPopulatingConverter">
+		<property name="targetClass" value="de.hybris.platform.commercefacades.product.data.ReviewData"/>
+		<property name="populators">
+			<list>
+				<ref bean="customerReviewPopulator"/>
+				<ref bean="enginCustomerReviewLikeDislikePopulator"/>
+			</list>
+		</property>
+	</bean>
+	
+	<alias name="enginCustomerReviewLikeDislikePopulator" alias="enginCustomerReviewLikeDislikePopulator"/>
+	<bean id="enginCustomerReviewLikeDislikePopulator"
+			class="com.engin.customerreview.converters.populators.EnginCustomerReviewLikeDislikePopulator">
+			<property name="userService" ref="userService" />
+	</bean>
+	
 
 </beans>
